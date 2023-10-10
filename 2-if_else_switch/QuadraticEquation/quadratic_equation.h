@@ -1,5 +1,5 @@
+#include <math.h>
 int QuadraticEquation(double a, double b, double c){
-    #include <math.h>
     double d = b * b - 4 * a * c, x1, x2, a1, a2, b1, b2;
     if (d > 0){
         x1 = (b * (-1) + sqrt(d)) / a / 2;
