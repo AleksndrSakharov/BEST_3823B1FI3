@@ -18,4 +18,5 @@ int QuadraticEquation(double a, double b, double c){
         return (a1 + a2 + b1 + b2);
     }
     return 0;
+    
 }
