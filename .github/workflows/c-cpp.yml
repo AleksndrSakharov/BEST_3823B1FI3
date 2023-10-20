@@ -123,34 +123,29 @@ jobs:
         working-directory: /home/runner/work/BEST_3823B1FI3/BEST_3823B1FI3
         run: ls
 
-      - name: Very hard setting
+      - name: Very hard setting load json
         shell: bash
         working-directory: /home/runner/work/BEST_3823B1FI3/BEST_3823B1FI3
         run: |
+          pip install pandas
           pip install gdown
-          gdown 1aQT78ya0EwUrmpAXYOn4f_DD39YPwa6Y
           gdown 1L6dRqWVmXx5V16C0sQXFQUK43PBfJ4hX
-          ls
 
-      - name: 0-Begin_Task clear
-        if: always()
+      - name: Load magscr, tstscr, mag
         shell: bash
         working-directory: /home/runner/work/BEST_3823B1FI3/BEST_3823B1FI3
-        run: python3 testscript.py -p ${{github.actor}} -t "0-Begin_Task" -n
+        run: |
+          gdown 1VLNuCVgDOw6PMqHMIsBl5xoYjYmPbCEK
+          gdown 1qFuKKr6acDVp3JMEy1VaIqIgsfpAA2xD
+          gdown 129gQ_wu82M4eud8mgmp8_C4jwA5TqRKa
+          ls
 
       - name: 0-Begin_Task
-        if: always()
         shell: bash
         working-directory: /home/runner/work/BEST_3823B1FI3/BEST_3823B1FI3
         run: |
           ./build/sum
-          python3 testscript.py -p ${{github.actor}} -t "0-Begin_Task" -r "$(echo $?)" -m 100
-
-      - name: 1-type clear
-        if: always()
-        shell: bash
-        working-directory: /home/runner/work/BEST_3823B1FI3/BEST_3823B1FI3
-        run: python3 testscript.py -p ${{github.actor}} -t "1-type" -n
+          python3 fill_magazine.py -t "0-Begin_Task" -r "$(echo $?)"
 
       - name: 1-type seconds
         if: always()
@@ -158,7 +153,7 @@ jobs:
         working-directory: /home/runner/work/BEST_3823B1FI3/BEST_3823B1FI3
         run: |
           ./build/1-type/seconds
-          python3 testscript.py -p ${{github.actor}} -t "1-type" -r "$(echo $?)" -m 10
+          python3 fill_magazine.py -t "seconds" -r "$(echo $?)"
 
       - name: 1-type clock
         if: always()
@@ -166,7 +161,7 @@ jobs:
         working-directory: /home/runner/work/BEST_3823B1FI3/BEST_3823B1FI3
         run: |
           ./build/1-type/clock
-          python3 testscript.py -p ${{github.actor}} -t "1-type" -r "$(echo $?)" -m 10
+          python3 fill_magazine.py -t "clock" -r "$(echo $?)"
 
       - name: 1-type module
         if: always()
@@ -174,7 +169,7 @@ jobs:
         working-directory: /home/runner/work/BEST_3823B1FI3/BEST_3823B1FI3
         run: |
           ./build/1-type/module
-          python3 testscript.py -p ${{github.actor}} -t "1-type" -r "$(echo $?)" -m 10
+          python3 fill_magazine.py -t "module" -r "$(echo $?)"
 
       - name: 1-type decomposition
         if: always()
@@ -182,7 +177,7 @@ jobs:
         working-directory: /home/runner/work/BEST_3823B1FI3/BEST_3823B1FI3
         run: |
           ./build/1-type/decomposition
-          python3 testscript.py -p ${{github.actor}} -t "1-type" -r "$(echo $?)" -m 10
+          python3 fill_magazine.py -t "decomposition" -r "$(echo $?)"
           
       - name: 1-type point
         if: always()
@@ -190,7 +185,7 @@ jobs:
         working-directory: /home/runner/work/BEST_3823B1FI3/BEST_3823B1FI3
         run: |
           ./build/1-type/point
-          python3 testscript.py -p ${{github.actor}} -t "1-type" -r "$(echo $?)" -m 10
+          python3 fill_magazine.py -t "point" -r "$(echo $?)"
 
       - name: 1-type char-category
         if: always()
@@ -198,7 +193,7 @@ jobs:
         working-directory: /home/runner/work/BEST_3823B1FI3/BEST_3823B1FI3
         run: |
           ./build/1-type/char-category
-          python3 testscript.py -p ${{github.actor}} -t "1-type" -r "$(echo $?)" -m 10
+          python3 fill_magazine.py -t "char-category" -r "$(echo $?)"
           
       - name: 1-type double
         if: always()
@@ -206,7 +201,7 @@ jobs:
         working-directory: /home/runner/work/BEST_3823B1FI3/BEST_3823B1FI3
         run: |
           ./build/1-type/double
-          python3 testscript.py -p ${{github.actor}} -t "1-type" -r "$(echo $?)" -m 10
+          python3 fill_magazine.py -t "double" -r "$(echo $?)"
           
       - name: 1-type byte
         if: always()
@@ -214,7 +209,7 @@ jobs:
         working-directory: /home/runner/work/BEST_3823B1FI3/BEST_3823B1FI3
         run: |
           ./build/1-type/byte
-          python3 testscript.py -p ${{github.actor}} -t "1-type" -r "$(echo $?)" -m 10
+          python3 fill_magazine.py -t "byte" -r "$(echo $?)"
 
       - name: 1-type deadline
         if: always()
@@ -222,15 +217,8 @@ jobs:
         working-directory: /home/runner/work/BEST_3823B1FI3/BEST_3823B1FI3
         run: |
           ./build/1-type/deadline
-          python3 testscript.py -p ${{github.actor}} -t "1-type" -r "$(echo $?)" -m 10
+          python3 fill_magazine.py -t "deadline" -r "$(echo $?)"
 
-
-
-      - name: 2-if_else_switch clear
-        if: always()
-        shell: bash
-        working-directory: /home/runner/work/BEST_3823B1FI3/BEST_3823B1FI3
-        run: python3 testscript.py -p ${{github.actor}} -t "2-if_else_switch" -n
 
       - name: 2-if_else_switch Change
         if: always()
@@ -238,7 +226,7 @@ jobs:
         working-directory: /home/runner/work/BEST_3823B1FI3/BEST_3823B1FI3
         run: |
           ./build/2-if_else_switch/change
-          python3 testscript.py -p ${{github.actor}} -t "2-if_else_switch" -r "$(echo $?)" -m 10
+          python3 fill_magazine.py -t "Change" -r "$(echo $?)"
           
       - name: 2-if_else_switch leapyear
         if: always()
@@ -246,7 +234,7 @@ jobs:
         working-directory: /home/runner/work/BEST_3823B1FI3/BEST_3823B1FI3
         run: |
           ./build/2-if_else_switch/leapyear
-          python3 testscript.py -p ${{github.actor}} -t "2-if_else_switch" -r "$(echo $?)" -m 10
+          python3 fill_magazine.py -t "LeapYear" -r "$(echo $?)"
 
       - name: 2-if_else_switch chocolate
         if: always()
@@ -254,7 +242,7 @@ jobs:
         working-directory: /home/runner/work/BEST_3823B1FI3/BEST_3823B1FI3
         run: |
           ./build/2-if_else_switch/chocolate
-          python3 testscript.py -p ${{github.actor}} -t "2-if_else_switch" -r "$(echo $?)" -m 10
+          python3 fill_magazine.py -t "Chocolate" -r "$(echo $?)"
 
       - name: 2-if_else_switch icecream
         if: always()
@@ -262,7 +250,7 @@ jobs:
         working-directory: /home/runner/work/BEST_3823B1FI3/BEST_3823B1FI3
         run: |
           ./build/2-if_else_switch/icecream
-          python3 testscript.py -p ${{github.actor}} -t "2-if_else_switch" -r "$(echo $?)" -m 10
+          python3 fill_magazine.py -t "IceCream" -r "$(echo $?)"
 
       - name: 2-if_else_switch QuadraticEquation
         if: always()
@@ -270,7 +258,7 @@ jobs:
         working-directory: /home/runner/work/BEST_3823B1FI3/BEST_3823B1FI3
         run: |
           ./build/2-if_else_switch/QuadraticEquation
-          python3 testscript.py -p ${{github.actor}} -t "2-if_else_switch" -r "$(echo $?)" -m 10
+          python3 fill_magazine.py -t "QuadraticEquation" -r "$(echo $?)"
 
       - name: 2-if_else_switch monthday
         if: always()
@@ -278,7 +266,7 @@ jobs:
         working-directory: /home/runner/work/BEST_3823B1FI3/BEST_3823B1FI3
         run: |
           ./build/2-if_else_switch/monthday
-          python3 testscript.py -p ${{github.actor}} -t "2-if_else_switch" -r "$(echo $?)" -m 10
+          python3 fill_magazine.py -t "MonthDay" -r "$(echo $?)"
 
       - name: 2-if_else_switch chess
         if: always()
@@ -286,7 +274,7 @@ jobs:
         working-directory: /home/runner/work/BEST_3823B1FI3/BEST_3823B1FI3
         run: |
           ./build/2-if_else_switch/chess
-          python3 testscript.py -p ${{github.actor}} -t "2-if_else_switch" -r "$(echo $?)" -m 10
+          python3 fill_magazine.py -t "Chess" -r "$(echo $?)"
 
       - name: 2-if_else_switch twoboxes
         if: always()
@@ -294,8 +282,183 @@ jobs:
         working-directory: /home/runner/work/BEST_3823B1FI3/BEST_3823B1FI3
         run: |
           ./build/2-if_else_switch/twoboxes
-          python3 testscript.py -p ${{github.actor}} -t "2-if_else_switch" -r "$(echo $?)" -m 10
+          python3 fill_magazine.py -t "TwoBoxes" -r "$(echo $?)"
           
+      - name: 3-loop bin_patterns
+        if: always()
+        shell: bash
+        working-directory: /home/runner/work/BEST_3823B1FI3/BEST_3823B1FI3
+        run: |
+          ./build/3-loop/bin_patterns
+          python3 fill_magazine.py -t "bin_patterns" -r "$(echo $?)"
+          
+      - name: 3-loop calc_e
+        if: always()
+        shell: bash
+        working-directory: /home/runner/work/BEST_3823B1FI3/BEST_3823B1FI3
+        run: |
+          ./build/3-loop/calc_e
+          python3 fill_magazine.py -t "calc_e" -r "$(echo $?)"
+
+      - name: 3-loop count_max_digit
+        if: always()
+        shell: bash
+        working-directory: /home/runner/work/BEST_3823B1FI3/BEST_3823B1FI3
+        run: |
+          ./build/3-loop/count_max_digit
+          python3 fill_magazine.py -t "count_max_digit" -r "$(echo $?)"
+
+      - name: 3-loop fibonacci
+        if: always()
+        shell: bash
+        working-directory: /home/runner/work/BEST_3823B1FI3/BEST_3823B1FI3
+        run: |
+          ./build/3-loop/fibonacci
+          python3 fill_magazine.py -t "fibonacci" -r "$(echo $?)"
+
+      - name: 3-loop find_digit
+        if: always()
+        shell: bash
+        working-directory: /home/runner/work/BEST_3823B1FI3/BEST_3823B1FI3
+        run: |
+          ./build/3-loop/find_digit
+          python3 fill_magazine.py -t "find_digit" -r "$(echo $?)"
+          
+      - name: 3-loop find_elem
+        if: always()
+        shell: bash
+        working-directory: /home/runner/work/BEST_3823B1FI3/BEST_3823B1FI3
+        run: |
+          ./build/3-loop/find_elem
+          python3 fill_magazine.py -t "find_elem" -r "$(echo $?)"
+
+      - name: 3-loop integral
+        if: always()
+        shell: bash
+        working-directory: /home/runner/work/BEST_3823B1FI3/BEST_3823B1FI3
+        run: |
+          ./build/3-loop/integral
+          python3 fill_magazine.py -t "integral" -r "$(echo $?)"
+          
+      - name: 3-loop limit
+        if: always()
+        shell: bash
+        working-directory: /home/runner/work/BEST_3823B1FI3/BEST_3823B1FI3
+        run: |
+          ./build/3-loop/limit
+          python3 fill_magazine.py -t "limit" -r "$(echo $?)"
+          
+      - name: 3-loop numinvers
+        if: always()
+        shell: bash
+        working-directory: /home/runner/work/BEST_3823B1FI3/BEST_3823B1FI3
+        run: |
+          ./build/3-loop/numinvers
+          python3 fill_magazine.py -t "numinvers" -r "$(echo $?)"
+
+      - name: 3-loop row
+        if: always()
+        shell: bash
+        working-directory: /home/runner/work/BEST_3823B1FI3/BEST_3823B1FI3
+        run: |
+          ./build/3-loop/row
+          python3 fill_magazine.py -t "row" -r "$(echo $?)"
+
+      - name: 4-array det
+        if: always()
+        shell: bash
+        working-directory: /home/runner/work/BEST_3823B1FI3/BEST_3823B1FI3
+        run: |
+          ./build/4-array/det
+          python3 fill_magazine.py -t "det" -r "$(echo $?)"
+          
+      - name: 4-array find_hole
+        if: always()
+        shell: bash
+        working-directory: /home/runner/work/BEST_3823B1FI3/BEST_3823B1FI3
+        run: |
+          ./build/4-array/find_hole
+          python3 fill_magazine.py -t "find_hole" -r "$(echo $?)"
+
+      - name: 4-array get_percent
+        if: always()
+        shell: bash
+        working-directory: /home/runner/work/BEST_3823B1FI3/BEST_3823B1FI3
+        run: |
+          ./build/4-array/get_percent
+          python3 fill_magazine.py -t "get_percent" -r "$(echo $?)"   
+
+      - name: 4-array kernel
+        if: always()
+        shell: bash
+        working-directory: /home/runner/work/BEST_3823B1FI3/BEST_3823B1FI3
+        run: |
+          ./build/4-array/kernel
+          python3 fill_magazine.py -t "kernel" -r "$(echo $?)"
+
+      - name: 4-array little_big_converter
+        if: always()
+        shell: bash
+        working-directory: /home/runner/work/BEST_3823B1FI3/BEST_3823B1FI3
+        run: |
+          ./build/4-array/little_big_converter
+          python3 fill_magazine.py -t "little_big_converter" -r "$(echo $?)"
+          
+      - name: 4-array max_local_min
+        if: always()
+        shell: bash
+        working-directory: /home/runner/work/BEST_3823B1FI3/BEST_3823B1FI3
+        run: |
+          ./build/4-array/max_local_min
+          python3 fill_magazine.py -t "max_local_min" -r "$(echo $?)"          
+          
+      - name: 4-array more_on_left
+        if: always()
+        shell: bash
+        working-directory: /home/runner/work/BEST_3823B1FI3/BEST_3823B1FI3
+        run: |
+          ./build/4-array/more_on_left
+          python3 fill_magazine.py -t "more_on_left" -r "$(echo $?)"          
+          
+      - name: 4-array robot
+        if: always()
+        shell: bash
+        working-directory: /home/runner/work/BEST_3823B1FI3/BEST_3823B1FI3
+        run: |
+          ./build/4-array/robot
+          python3 fill_magazine.py -t "robot" -r "$(echo $?)"             
+        
+      - name: 5-pointer even
+        if: always()
+        shell: bash
+        working-directory: /home/runner/work/BEST_3823B1FI3/BEST_3823B1FI3
+        run: |
+          ./build/5-pointer/even
+          python3 fill_magazine.py -t "even" -r "$(echo $?)"      
+
+      - name: 5-pointer matrix_multy
+        if: always()
+        shell: bash
+        working-directory: /home/runner/work/BEST_3823B1FI3/BEST_3823B1FI3
+        run: |
+          ./build/5-pointer/matrix_multy
+          python3 fill_magazine.py -t "matrix_multy" -r "$(echo $?)"            
+          
+      - name: 5-pointer packaging
+        if: always()
+        shell: bash
+        working-directory: /home/runner/work/BEST_3823B1FI3/BEST_3823B1FI3
+        run: |
+          ./build/5-pointer/packaging
+          python3 fill_magazine.py -t "packaging" -r "$(echo $?)"  
+
+          
+      - name: Estimate
+        if: always()
+        shell: bash
+        working-directory: /home/runner/work/BEST_3823B1FI3/BEST_3823B1FI3
+        run: python3 testscript.py -p ${{github.actor}}
+
       - name: Upload release asset
         if: github.event_name == 'release' && (github.event.action == 'published' || github.event.action == 'created')
         uses: actions/upload-release-asset@v1
