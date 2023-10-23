@@ -11,5 +11,4 @@ int chess_rook(char a, int b, char c, int d){
     else return 0;
     }
     return 0;
-    
 }
