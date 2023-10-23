@@ -19,5 +19,6 @@ bool is_punctuation(char x) {
 int get_ascii_code(char first, char second, char third) {
     int result = (first * 1000000) + (second * 1000) + third;
     return result; // No implementation
+    
 }
 

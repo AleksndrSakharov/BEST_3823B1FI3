@@ -16,4 +16,5 @@ char find_bin_pattern(int number){
         }
     }
     return count;
+    
 }
