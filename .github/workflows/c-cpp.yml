@@ -450,8 +450,7 @@ jobs:
         working-directory: /home/runner/work/BEST_3823B1FI3/BEST_3823B1FI3
         run: |
           ./build/5-pointer/packaging
-          python3 fill_magazine.py -t "packaging" -r "$(echo $?)"  
-
+          python3 fill_magazine.py -t "packaging" -r "$(echo $?)"
           
       - name: Estimate
         if: always()
