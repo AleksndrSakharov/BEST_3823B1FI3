@@ -1,3 +1,5 @@
 int get_module(int a, int b, int c) {
-    return 0; // Not implementation
+    int res;
+    res = ((a % c) * (b % c)) % c;
+    return res; // Not implementation
 }
