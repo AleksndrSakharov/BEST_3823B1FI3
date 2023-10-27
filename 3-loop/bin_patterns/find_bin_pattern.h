@@ -10,9 +10,6 @@ char find_bin_pattern(int number){
     for(int i = 0; i < j; i++){
         if((a[i] == 1) && (a[i+1] == 0) && (a[i+2] == 1)){
             count++;
-            a[i] = 0;
-            a[i+1] = 0;
-            a[i+2] = 0;
         }
     }
     return count;
