@@ -15,7 +15,6 @@ void test_percent() {
     TEST_ASSERT(calc_percent(matrix3, sizeof(matrix3)/sizeof(int)) < 40);
     TEST_ASSERT(calc_percent(matrix4, sizeof(matrix4)/sizeof(int)) < 1);
     TEST_ASSERT(calc_percent(matrix5, sizeof(matrix5)/sizeof(int)) > 98);
-
 }
 
 TEST_LIST = {
