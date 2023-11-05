@@ -26,7 +26,7 @@ int find_elem(int left, int right, int number, int max_iter){
             i++;
             if(n > k + l){
                 l += k;
-                k += l;
+                k += l - 1;
             }
             if(n == k + l){
                 n = k + l - 1;
@@ -35,6 +35,6 @@ int find_elem(int left, int right, int number, int max_iter){
         }
     }
 
-
+    i *= n;
     return i; //НЕ МЕНЯТЬ!
 }
