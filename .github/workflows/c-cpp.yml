@@ -79,7 +79,7 @@ jobs:
           sudo update-alternatives --install /usr/bin/ninja ninja /usr/local/bin/ninja 1 --force
           echo ninja version after
           ninja --version
-          echo Update cmake =======================================================================
+          echo Update cmake ========================================================================
           echo cmake version before
           cmake --version
           # curl --silent "https://api.github.com/repos/Kitware/CMake/releases/latest" | sed -n 's/.*tag_name":\s"\(.*\)".*/\1/p' | head -2
