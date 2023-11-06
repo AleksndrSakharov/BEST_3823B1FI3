@@ -12,6 +12,7 @@ int num_invers(int num){
         n /= 10;
     }
     n = num;
+    
     int a[i];
     for(i = 0; i < sizeof(a)/sizeof(int); i++){
         a[i] = n % 10;
