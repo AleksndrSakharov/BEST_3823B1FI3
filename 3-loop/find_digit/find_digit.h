@@ -24,7 +24,7 @@ char find_digit(double number, char digit){
         if(flag == 1){
             count++;
             if(a[i] == digit) return count;
-        }
+        } 
     }
     return -1;
 }
