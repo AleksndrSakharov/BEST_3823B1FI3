@@ -433,7 +433,7 @@ jobs:
         shell: bash
         working-directory: /home/runner/work/BEST_3823B1FI3/BEST_3823B1FI3
         run: |
-          ./build/5-pointer/even
+          ./build/5-pointer/find_even
           python3 fill_magazine.py -t "even" -r "$(echo $?)"      
 
       - name: 5-pointer matrix_multy
@@ -441,7 +441,7 @@ jobs:
         shell: bash
         working-directory: /home/runner/work/BEST_3823B1FI3/BEST_3823B1FI3
         run: |
-          ./build/5-pointer/matrix_multy
+          ./build/5-pointer/matrix_mul
           python3 fill_magazine.py -t "matrix_multy" -r "$(echo $?)"            
           
       - name: 5-pointer packaging
@@ -449,7 +449,7 @@ jobs:
         shell: bash
         working-directory: /home/runner/work/BEST_3823B1FI3/BEST_3823B1FI3
         run: |
-          ./build/5-pointer/packaging
+          ./build/5-pointer/package
           python3 fill_magazine.py -t "packaging" -r "$(echo $?)"
 
       - name: 5-pointer calculate size
@@ -457,7 +457,7 @@ jobs:
         shell: bash
         working-directory: /home/runner/work/BEST_3823B1FI3/BEST_3823B1FI3
         run: |
-          ./build/5-pointer/calc_size
+          ./build/5-pointer/calculate_size
           python3 fill_magazine.py -t "calc_size" -r "$(echo $?)"
 
       - name: 5-pointer angle
@@ -523,6 +523,183 @@ jobs:
         run: |
           ./build/6-functions/subarray
           python3 fill_magazine.py -t "subarray" -r "$(echo $?)"
+
+      - name: 7-recursion calc row sum
+        if: always()
+        shell: bash
+        working-directory: /home/runner/work/BEST_3823B1FI3/BEST_3823B1FI3
+        run: |
+          ./build/7-recursion/calc_row_sum
+          python3 fill_magazine.py -t "calc_row_sum" -r "$(echo $?)"
+
+      - name: 7-recursion recursion array sum
+        if: always()
+        shell: bash
+        working-directory: /home/runner/work/BEST_3823B1FI3/BEST_3823B1FI3
+        run: |
+          ./build/7-recursion/recursion_array_sum
+          python3 fill_magazine.py -t "recursion_array_sum" -r "$(echo $?)"
+
+      - name: 7-recursion NOD
+        if: always()
+        shell: bash
+        working-directory: /home/runner/work/BEST_3823B1FI3/BEST_3823B1FI3
+        run: |
+          ./build/7-recursion/NOD
+          python3 fill_magazine.py -t "NOD" -r "$(echo $?)"
+
+      - name: 7-recursion new series
+        if: always()
+        shell: bash
+        working-directory: /home/runner/work/BEST_3823B1FI3/BEST_3823B1FI3
+        run: |
+          ./build/7-recursion/new_series
+          python3 fill_magazine.py -t "new_series" -r "$(echo $?)"
+
+      - name: 7-recursion revers array
+        if: always()
+        shell: bash
+        working-directory: /home/runner/work/BEST_3823B1FI3/BEST_3823B1FI3
+        run: |
+          ./build/7-recursion/revers_array
+          python3 fill_magazine.py -t "revers_array" -r "$(echo $?)"
+
+      - name: 8-strings str to double
+        if: always()
+        shell: bash
+        working-directory: /home/runner/work/BEST_3823B1FI3/BEST_3823B1FI3
+        run: |
+          ./build/8-strings/str_to_double
+          python3 fill_magazine.py -t "str_to_double" -r "$(echo $?)"
+
+      - name: 8-strings double to str
+        if: always()
+        shell: bash
+        working-directory: /home/runner/work/BEST_3823B1FI3/BEST_3823B1FI3
+        run: |
+          ./build/8-strings/double_to_str
+          python3 fill_magazine.py -t "double_to_str" -r "$(echo $?)"
+
+      - name: 8-strings calc expresson
+        if: always()
+        shell: bash
+        working-directory: /home/runner/work/BEST_3823B1FI3/BEST_3823B1FI3
+        run: |
+          ./build/8-strings/calc_expresson
+          python3 fill_magazine.py -t "calc_expresson" -r "$(echo $?)"
+
+      - name: 8-strings palindrome
+        if: always()
+        shell: bash
+        working-directory: /home/runner/work/BEST_3823B1FI3/BEST_3823B1FI3
+        run: |
+          ./build/8-strings/palindrome
+          python3 fill_magazine.py -t "palindrome" -r "$(echo $?)"
+
+      - name: 8-strings delete symbol
+        if: always()
+        shell: bash
+        working-directory: /home/runner/work/BEST_3823B1FI3/BEST_3823B1FI3
+        run: |
+          ./build/8-strings/delete_symbol
+          python3 fill_magazine.py -t "delete_symbol" -r "$(echo $?)"
+
+      - name: 8-strings to lower
+        if: always()
+        shell: bash
+        working-directory: /home/runner/work/BEST_3823B1FI3/BEST_3823B1FI3
+        run: |
+          ./build/8-strings/to_lower
+          python3 fill_magazine.py -t "to_lower" -r "$(echo $?)"
+
+      - name: 9-files smyle_file
+        if: always()
+        shell: bash
+        working-directory: /home/runner/work/BEST_3823B1FI3/BEST_3823B1FI3
+        run: |
+          ./build/9-files/smyle_file
+          python3 fill_magazine.py -t "smyle_file" -r "$(echo $?)"
+
+      - name: 9-files christmas tree
+        if: always()
+        shell: bash
+        working-directory: /home/runner/work/BEST_3823B1FI3/BEST_3823B1FI3
+        run: |
+          ./build/9-files/christmas_tree
+          python3 fill_magazine.py -t "christmas_tree" -r "$(echo $?)"
+
+      - name: 9-files fileinfo
+        if: always()
+        shell: bash
+        working-directory: /home/runner/work/BEST_3823B1FI3/BEST_3823B1FI3
+        run: |
+          ./build/9-files/fileinfo
+          python3 fill_magazine.py -t "fileinfo" -r "$(echo $?)"
+
+      - name: 9-files JSON Parser
+        if: always()
+        shell: bash
+        working-directory: /home/runner/work/BEST_3823B1FI3/BEST_3823B1FI3
+        run: |
+          ./build/9-files/JSON_Parser
+          python3 fill_magazine.py -t "JSON_Parser" -r "$(echo $?)"
+
+      - name: 9-files XML Parser
+        if: always()
+        shell: bash
+        working-directory: /home/runner/work/BEST_3823B1FI3/BEST_3823B1FI3
+        run: |
+          ./build/9-files/XML_Parser
+          python3 fill_magazine.py -t "XML_Parser" -r "$(echo $?)"
+
+      - name: 9-files what_word
+        if: always()
+        shell: bash
+        working-directory: /home/runner/work/BEST_3823B1FI3/BEST_3823B1FI3
+        run: |
+          ./build/9-files/what_word
+          python3 fill_magazine.py -t "what_word" -r "$(echo $?)"
+
+      - name: 9-files is not python
+        if: always()
+        shell: bash
+        working-directory: /home/runner/work/BEST_3823B1FI3/BEST_3823B1FI3
+        run: |
+          ./build/9-files/is_not_python
+          python3 fill_magazine.py -t "is_not_python" -r "$(echo $?)"
+
+      - name: 10-structs struct like parametr
+        if: always()
+        shell: bash
+        working-directory: /home/runner/work/BEST_3823B1FI3/BEST_3823B1FI3
+        run: |
+          ./build/10-structs/struct_like_parametr
+          python3 fill_magazine.py -t "struct_like_parametr" -r "$(echo $?)"
+
+      - name: 10-structs med queue
+        if: always()
+        shell: bash
+        working-directory: /home/runner/work/BEST_3823B1FI3/BEST_3823B1FI3
+        run: |
+          ./build/10-structs/med_queue
+          python3 fill_magazine.py -t "med_queue" -r "$(echo $?)"
+
+      - name: 10-structs return struct
+        if: always()
+        shell: bash
+        working-directory: /home/runner/work/BEST_3823B1FI3/BEST_3823B1FI3
+        run: |
+          ./build/10-structs/return_struct
+          python3 fill_magazine.py -t "return_struct" -r "$(echo $?)"
+
+      - name: 10-structs "paper please"
+        if: always()
+        shell: bash
+        working-directory: /home/runner/work/BEST_3823B1FI3/BEST_3823B1FI3
+        run: |
+          ./build/10-structs/paper_please
+          python3 fill_magazine.py -t "paper_please" -r "$(echo $?)"
+
           
       - name: Estimate
         if: always()
