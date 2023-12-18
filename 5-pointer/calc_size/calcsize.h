@@ -1,5 +1,6 @@
 #include <math.h>
 
 int calcsize(void* memory){
-    return 0;
+    int tipe = sizeof(memory);
+    return tipe;
 }
