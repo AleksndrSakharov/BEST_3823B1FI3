@@ -19,5 +19,5 @@ int* array_generator(int* real_size, int k, int m, int f){
         } 
         if (summ > k) break;
     }
-    return a;
+    return a; 
 }
