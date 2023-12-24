@@ -8,8 +8,7 @@ int* array_generator(int* real_size, int k, int m, int f){
     int j = 1;
     int* a = (int*)calloc(sizeof(int), *real_size);
     a[*real_size-1] = f;
-    while (1){
-        if (summ > m) break;
+    while (summ < m){
         if (summ < k - 1){
             if (a[j] < f){
                 a[j]++;
