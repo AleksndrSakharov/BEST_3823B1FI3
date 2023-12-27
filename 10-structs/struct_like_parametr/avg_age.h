@@ -19,5 +19,7 @@ typedef struct
 
 
 double calc_avg_age(Person* persons, int num_persons){
-    return 0.0;
+    // double res = 0;
+    // for (int i = 0; i < num)
+    // return res;
 }
